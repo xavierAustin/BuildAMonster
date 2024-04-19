@@ -63,26 +63,31 @@ class Monster extends Phaser.Scene {
         my.sprite.body[4] = this.add.sprite(this.bodyX, this.bodyY, "monsterParts", "body_whiteD.png");
         my.sprite.body[5] = this.add.sprite(this.bodyX, this.bodyY-95, "monsterParts", "body_whiteB.png");
         my.sprite.body[5].setScale(0.95);
-        my.sprite.body[6] = this.add.sprite(this.bodyX-30, this.bodyY-140, "monsterParts", "eyebrowB.png");
-        my.sprite.body[6].flipX = 1;
-        my.sprite.body[6].setScale(0.6,0.75);
-        my.sprite.body[7] = this.add.sprite(this.bodyX+30, this.bodyY-140, "monsterParts", "eyebrowB.png");
-        my.sprite.body[7].setScale(0.6,0.75);
-        my.sprite.body[8] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "eye_red.png");
-        my.sprite.body[8].setScale(0.8);
-        my.sprite.body[9] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "eye_red.png");
-        my.sprite.body[9].setScale(0.8);
-        my.sprite.body[10] = this.add.sprite(this.bodyX, this.bodyY+45-100, "monsterParts", "mouthI.png");
-        my.sprite.body[11] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "eye_yellow.png");
-        my.sprite.body[11].setScale(0.84);
-        my.sprite.body[12] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "eye_yellow.png");
-        my.sprite.body[12].setScale(0.84);
-        my.sprite.body[13] = this.add.sprite(this.bodyX, this.bodyY+45-100, "monsterParts", "mouth_closed_fangs.png");
-        my.sprite.body[13].setScale(1.8,-0.5);
-        my.sprite.body[14] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "body_whiteB.png");
-        my.sprite.body[14].setScale(0.3);
-        my.sprite.body[15] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "body_whiteB.png");
-        my.sprite.body[15].setScale(0.3);
+        my.sprite.body[6] = this.add.sprite(this.bodyX+75, this.bodyY-160, "monsterParts", "detail_white_ear.png");
+        my.sprite.body[6].setScale(1.8,1.5);
+        my.sprite.body[7] = this.add.sprite(this.bodyX-75, this.bodyY-160, "monsterParts", "detail_white_ear.png");
+        my.sprite.body[7].flipX = 1;
+        my.sprite.body[7].setScale(1.8,1.5);
+        my.sprite.body[8] = this.add.sprite(this.bodyX-30, this.bodyY-140, "monsterParts", "eyebrowB.png");
+        my.sprite.body[8].flipX = 1;
+        my.sprite.body[8].setScale(0.6,0.75);
+        my.sprite.body[9] = this.add.sprite(this.bodyX+30, this.bodyY-140, "monsterParts", "eyebrowB.png");
+        my.sprite.body[9].setScale(0.6,0.75);
+        my.sprite.body[10] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "eye_red.png");
+        my.sprite.body[10].setScale(0.8);
+        my.sprite.body[11] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "eye_red.png");
+        my.sprite.body[11].setScale(0.8);
+        my.sprite.body[12] = this.add.sprite(this.bodyX, this.bodyY+45-100, "monsterParts", "mouthI.png");
+        my.sprite.body[13] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "eye_yellow.png");
+        my.sprite.body[13].setScale(0.84);
+        my.sprite.body[14] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "eye_yellow.png");
+        my.sprite.body[14].setScale(0.84);
+        my.sprite.body[15] = this.add.sprite(this.bodyX, this.bodyY+45-100, "monsterParts", "mouth_closed_fangs.png");
+        my.sprite.body[15].setScale(1.8,-0.5);
+        my.sprite.body[16] = this.add.sprite(this.bodyX-38, this.bodyY-100, "monsterParts", "body_whiteB.png");
+        my.sprite.body[16].setScale(0.3);
+        my.sprite.body[17] = this.add.sprite(this.bodyX+38, this.bodyY-100, "monsterParts", "body_whiteB.png");
+        my.sprite.body[17].setScale(0.3);
     }
 
     update() {
@@ -100,10 +105,10 @@ class Monster extends Phaser.Scene {
             if (i > 3)
                 x.y += Math.sin(this.breath)*0.5;
             //fangs/smile
-            if (i > 5)
-                x.visible = this.fangs^(i>10);
+            if (i > 7)
+                x.visible = this.fangs^(i>12);
             //blinking
-            if (i > 13)
+            if (i > 15)
                 x.visible = (this.blink>30);
             i ++;
         }
